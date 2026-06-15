@@ -10,7 +10,6 @@ vendor/
 .ponder
 
 # Env
-.env
 .env*.local
 
 # Logs
