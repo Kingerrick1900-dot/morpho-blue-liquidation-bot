@@ -11,10 +11,6 @@ COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 COPY apps/config/package.json ./apps/config/
 COPY apps/client/package.json ./apps/client/
 
-# Copy vendor directory (for local packages like viem-dlc)
-# The morpho-org-viem-dlc-0.0.1.tgz file must be placed in vendor/ before building
-COPY vendor/ ./vendor/
-
 # Install dependencies (this layer will be cached unless package files change)
 # Note: node_modules will be installed for Linux platform inside the container
 RUN pnpm install --fetch-retries 5 --frozen-lockfile
